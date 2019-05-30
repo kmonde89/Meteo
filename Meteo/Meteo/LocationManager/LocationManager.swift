@@ -13,6 +13,7 @@ class LocationManager: NSObject {
     enum AuthorizationStatus {
         case authorized
         case unauthorized
+        case undetermined
     }
 
     private let locationManager = CLLocationManager()
@@ -25,19 +26,19 @@ class LocationManager: NSObject {
     override init() {
         super.init()
         self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
     }
 
     func getAuthorizationStatus() {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways, .authorizedWhenInUse:
             self.delegate?.authorization(status: .authorized)
+        case .notDetermined:
+            self.delegate?.authorization(status: .undetermined)
         default:
             self.delegate?.authorization(status: .unauthorized)
         }
     }
-
-
 
     func requestAutorization() {
         self.locationManager.requestWhenInUseAuthorization()
@@ -49,6 +50,8 @@ extension LocationManager: CLLocationManagerDelegate {
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
             self.delegate?.authorizationDidChange(status: .authorized)
+        case .notDetermined:
+            self.delegate?.authorizationDidChange(status: .undetermined)
         default:
             self.delegate?.authorizationDidChange(status: .unauthorized)
         }

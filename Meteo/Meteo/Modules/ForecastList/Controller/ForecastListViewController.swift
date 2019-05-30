@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ForecastListViewController: UIViewController {
 
@@ -17,8 +18,8 @@ class ForecastListViewController: UIViewController {
     // MARK: - Properties
 
     var forecastsObserver: KVObserver<[ForecastDTO]>?
-
-    let viewModel = ForecastListViewModel(localisation: "48.85341,2.3488")
+    var coordinateObserver: KVObserver<CLLocationCoordinate2D?>?
+    let viewModel = ForecastListViewModel()
 
     // MARK: - LifeCycle
 
@@ -44,12 +45,20 @@ class ForecastListViewController: UIViewController {
             return
         }
 
-        let observer = KVObserver<[ForecastDTO]>(viewModel.forecasts)
+        let forecastsObserver = KVObserver<[ForecastDTO]>(viewModel.forecasts)
 
-        observer.closure = { [weak self ] _ in
+        forecastsObserver.closure = { [weak self ] _ in
             self?.tableView.reloadData()
         }
-        self.forecastsObserver = observer
+        self.forecastsObserver = forecastsObserver
+
+        let coordinateObserver = KVObserver<CLLocationCoordinate2D?>(viewModel.coordinate)
+
+        coordinateObserver.closure = { [weak self ] _ in
+            self?.viewModel.updateGetMeteoLocation()
+            self?.viewModel.reloadInformations()
+        }
+        self.coordinateObserver = coordinateObserver
 
         viewModel.errorClosure = { [weak self] error in
             self?.show(error: error)
