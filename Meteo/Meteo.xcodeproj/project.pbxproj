@@ -50,6 +50,15 @@
 		2767E73922A00F760065F2B5 /* MeteoEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E73822A00F760065F2B5 /* MeteoEndPoint.swift */; };
 		2767E73B22A010100065F2B5 /* MeteoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E73A22A010100065F2B5 /* MeteoConstants.swift */; };
 		2767E73E22A0111E0065F2B5 /* GetMeteo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E73D22A0111E0065F2B5 /* GetMeteo.swift */; };
+		2767E74322A018500065F2B5 /* TableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E74222A018500065F2B5 /* TableViewCellProtocol.swift */; };
+		2767E74722A018A80065F2B5 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E74522A018A80065F2B5 /* ForecastTableViewCell.swift */; };
+		2767E74822A018A80065F2B5 /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2767E74622A018A80065F2B5 /* ForecastTableViewCell.xib */; };
+		2767E74A22A019CA0065F2B5 /* ForecastListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E74922A019CA0065F2B5 /* ForecastListViewModel.swift */; };
+		2767E74C22A01C3F0065F2B5 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E74B22A01C3F0065F2B5 /* UIViewController+Extensions.swift */; };
+		2767E74E22A01E410065F2B5 /* KVObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E74D22A01E410065F2B5 /* KVObserver.swift */; };
+		2767E75422A026080065F2B5 /* StoryboardControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E75322A026080065F2B5 /* StoryboardControllerProtocol.swift */; };
+		2767E75622A026330065F2B5 /* ForecastList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2767E75522A026330065F2B5 /* ForecastList.storyboard */; };
+		2767E75A22A026670065F2B5 /* ForecastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E75922A026670065F2B5 /* ForecastListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +105,15 @@
 		2767E73822A00F760065F2B5 /* MeteoEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoEndPoint.swift; sourceTree = "<group>"; };
 		2767E73A22A010100065F2B5 /* MeteoConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoConstants.swift; sourceTree = "<group>"; };
 		2767E73D22A0111E0065F2B5 /* GetMeteo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMeteo.swift; sourceTree = "<group>"; };
+		2767E74222A018500065F2B5 /* TableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellProtocol.swift; sourceTree = "<group>"; };
+		2767E74522A018A80065F2B5 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		2767E74622A018A80065F2B5 /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
+		2767E74922A019CA0065F2B5 /* ForecastListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListViewModel.swift; sourceTree = "<group>"; };
+		2767E74B22A01C3F0065F2B5 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		2767E74D22A01E410065F2B5 /* KVObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVObserver.swift; sourceTree = "<group>"; };
+		2767E75322A026080065F2B5 /* StoryboardControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardControllerProtocol.swift; sourceTree = "<group>"; };
+		2767E75522A026330065F2B5 /* ForecastList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForecastList.storyboard; sourceTree = "<group>"; };
+		2767E75922A026670065F2B5 /* ForecastListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +155,7 @@
 		2767E6B1229FC9110065F2B5 /* Meteo */ = {
 			isa = PBXGroup;
 			children = (
+				2767E73F22A017C50065F2B5 /* Modules */,
 				2767E72F22A00BA90065F2B5 /* Network */,
 				2767E728229FEE680065F2B5 /* LocationManager */,
 				2767E6FF229FD8020065F2B5 /* Utils */,
@@ -209,7 +228,9 @@
 		2767E6FF229FD8020065F2B5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2767E74122A0182B0065F2B5 /* UI Protocols */,
 				2767E700229FD8090065F2B5 /* Extensions */,
+				2767E74D22A01E410065F2B5 /* KVObserver.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -219,6 +240,7 @@
 			children = (
 				2767E701229FD8220065F2B5 /* DateFormatter+Extensions.swift */,
 				2767E72D229FF15C0065F2B5 /* CLPlacemark+Extensions.swift */,
+				2767E74B22A01C3F0065F2B5 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -265,6 +287,59 @@
 				2767E73D22A0111E0065F2B5 /* GetMeteo.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		2767E73F22A017C50065F2B5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2767E74022A017D10065F2B5 /* ForecastList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2767E74022A017D10065F2B5 /* ForecastList */ = {
+			isa = PBXGroup;
+			children = (
+				2767E75822A026450065F2B5 /* Controller */,
+				2767E75722A0263E0065F2B5 /* Model */,
+				2767E74422A018770065F2B5 /* Cells */,
+				2767E75522A026330065F2B5 /* ForecastList.storyboard */,
+			);
+			path = ForecastList;
+			sourceTree = "<group>";
+		};
+		2767E74122A0182B0065F2B5 /* UI Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2767E74222A018500065F2B5 /* TableViewCellProtocol.swift */,
+				2767E75322A026080065F2B5 /* StoryboardControllerProtocol.swift */,
+			);
+			path = "UI Protocols";
+			sourceTree = "<group>";
+		};
+		2767E74422A018770065F2B5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2767E74522A018A80065F2B5 /* ForecastTableViewCell.swift */,
+				2767E74622A018A80065F2B5 /* ForecastTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2767E75722A0263E0065F2B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2767E74922A019CA0065F2B5 /* ForecastListViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2767E75822A026450065F2B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2767E75922A026670065F2B5 /* ForecastListViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +423,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2767E74822A018A80065F2B5 /* ForecastTableViewCell.xib in Resources */,
 				2767E708229FE0AC0065F2B5 /* nebulosite.json in Resources */,
 				2767E6BD229FC9130065F2B5 /* LaunchScreen.storyboard in Resources */,
 				2767E71D229FE31C0065F2B5 /* ventMoyen.json in Resources */,
@@ -357,6 +433,7 @@
 				2767E714229FE27E0065F2B5 /* humidite.json in Resources */,
 				2767E6B8229FC9110065F2B5 /* Main.storyboard in Resources */,
 				2767E71A229FE2ED0065F2B5 /* ventDirection.json in Resources */,
+				2767E75622A026330065F2B5 /* ForecastList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,15 +463,22 @@
 				2767E73E22A0111E0065F2B5 /* GetMeteo.swift in Sources */,
 				2767E723229FE49B0065F2B5 /* WindDirectionDTO.swift in Sources */,
 				2767E6D0229FD04C0065F2B5 /* MeteoDTO.swift in Sources */,
+				2767E74C22A01C3F0065F2B5 /* UIViewController+Extensions.swift in Sources */,
+				2767E75A22A026670065F2B5 /* ForecastListViewController.swift in Sources */,
 				2767E702229FD8220065F2B5 /* DateFormatter+Extensions.swift in Sources */,
+				2767E74E22A01E410065F2B5 /* KVObserver.swift in Sources */,
 				2767E6F9229FD61F0065F2B5 /* ForecastDTO.swift in Sources */,
+				2767E74A22A019CA0065F2B5 /* ForecastListViewModel.swift in Sources */,
 				2767E72E229FF15C0065F2B5 /* CLPlacemark+Extensions.swift in Sources */,
+				2767E75422A026080065F2B5 /* StoryboardControllerProtocol.swift in Sources */,
 				2767E70B229FE0FE0065F2B5 /* TemperatureDTO.swift in Sources */,
 				2767E73922A00F760065F2B5 /* MeteoEndPoint.swift in Sources */,
 				2767E705229FD9F70065F2B5 /* CloudinessDTO.swift in Sources */,
 				2767E72A229FEE7C0065F2B5 /* LocationManager.swift in Sources */,
 				2767E720229FE48A0065F2B5 /* WindSpeedDTO.swift in Sources */,
 				2767E73622A00D3A0065F2B5 /* DecodableRequestProtocol.swift in Sources */,
+				2767E74322A018500065F2B5 /* TableViewCellProtocol.swift in Sources */,
+				2767E74722A018A80065F2B5 /* ForecastTableViewCell.swift in Sources */,
 				2767E6B3229FC9110065F2B5 /* AppDelegate.swift in Sources */,
 				2767E6FD229FD6B20065F2B5 /* DecodingError.swift in Sources */,
 				2767E73B22A010100065F2B5 /* MeteoConstants.swift in Sources */,

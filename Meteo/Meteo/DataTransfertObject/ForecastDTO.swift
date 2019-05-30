@@ -37,7 +37,6 @@ struct ForecastDTO: Decodable {
 
         self.date = date
         self.cloudiness = try container.decode(CloudinessDTO.self, forKey: .cloudiness)
-
         self.temperature = try container.decode(TemperatureDTO.self, forKey: .temperature)
         self.windSpeed = try container.decode(WindSpeedDTO.self, forKey: .windSpeed)
         self.windDirection = try container.decode(WindDirectionDTO.self, forKey: .windDirection)
