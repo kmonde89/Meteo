@@ -7,9 +7,27 @@
 //
 
 import Foundation
+import CoreData
 import CoreLocation
 
-class ForecastListViewModel {
+class ForecastListViewModel: NSObject {
+    fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Forecast>? = {
+        // Create Fetch Request
+        let fetchRequest: NSFetchRequest<Forecast> = Forecast.fetchRequestCurrentLocationForecast()
+
+        // Create Fetched Results Controller
+
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.current.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+
+
+        // Configure Fetched Results Controller
+        fetchedResultsController.delegate = self
+
+        return fetchedResultsController
+    }()
+
+    // MARK: - Requests
+
     private var getMeteo: GetMeteo? {
         didSet {
             guard let dataTask = oldValue?.dataTask, dataTask.state == .running else {
@@ -21,25 +39,36 @@ class ForecastListViewModel {
         }
     }
 
+    // MARK: - Manager
+
     private var locationManager: LocationManager?
+
+    // MARK: - Closure
 
     var errorClosure: ((Error) -> Void)?
 
     // MARK: - Observable
 
-    var forecasts = KVObservable<[ForecastDTO]>([])
+    var forecasts = KVObservable<[Forecast]>([])
     var coordinate = KVObservable<CLLocationCoordinate2D?>(nil)
 
-    init(localisation: String) {
-        self.getMeteo = GetMeteo(location: localisation)
-    }
-
-    init() {
+    override init() {
+        super.init()
         self.locationManager = LocationManager()
         self.locationManager?.delegate = self
         self.locationManager?.getAuthorizationStatus()
+        self.performFetch()
     }
 
+
+    func performFetch() {
+        do {
+            try self.fetchedResultsController?.performFetch()
+        } catch {
+            let fetchError = error as NSError
+            print("\(fetchError), \(fetchError.localizedDescription)")
+        }
+    }
 
     func updateGetMeteoLocation() {
         guard let coordinate = self.coordinate.value else {
@@ -53,19 +82,31 @@ class ForecastListViewModel {
         self.getMeteo?.performRequest { [weak self](result) in
             switch result {
             case .success(let meteoDTO):
-                self?.forecasts.value = meteoDTO.forecast.sorted(by: {$0.date < $1.date})
+                guard let coordinate = self?.coordinate.value else {
+                    return
+                }
+                CoreDataManager.current.save(meteoDTO, coordinate: coordinate, isCurrentLocation: true, { result in
+                    DispatchQueue.main.async { [weak self] in
+                        switch result {
+                        case .failure(let error):
+                            self?.errorClosure?(error)
+                        default:
+                            return
+                        }
+                    }
+                })
             case .failure(let error):
                 self?.errorClosure?(error)
             }
         }
     }
 
-    func forecast(for row: Int) -> ForecastDTO? {
-        guard row > -1 && row < self.forecasts.value.count else {
-            return nil
-        }
+    func forecastCount() -> Int? {
+        return self.fetchedResultsController?.fetchedObjects?.count
+    }
 
-        return self.forecasts.value[row]
+    func forecastModel(at indexPath: IndexPath) -> Forecast? {
+        return self.fetchedResultsController?.object(at: indexPath)
     }
 }
 
@@ -90,3 +131,10 @@ extension ForecastListViewModel: LocationManagerDelegate {
     }
 }
 
+extension ForecastListViewModel: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        if let controller = controller as? NSFetchedResultsController<Forecast> {
+            self.forecasts.value = controller.fetchedObjects ?? []
+        }
+    }
+}
