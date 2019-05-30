@@ -17,7 +17,7 @@ class ForecastListViewController: UIViewController {
 
     // MARK: - Properties
 
-    var forecastsObserver: KVObserver<[ForecastDTO]>?
+    var forecastsObserver: KVObserver<[Forecast]>?
     var coordinateObserver: KVObserver<CLLocationCoordinate2D?>?
     let viewModel = ForecastListViewModel()
 
@@ -37,6 +37,11 @@ class ForecastListViewController: UIViewController {
         self.viewModel.reloadInformations()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.removeBinding()
+    }
+
 
     // MARK: - Binding
 
@@ -45,7 +50,7 @@ class ForecastListViewController: UIViewController {
             return
         }
 
-        let forecastsObserver = KVObserver<[ForecastDTO]>(viewModel.forecasts)
+        let forecastsObserver = KVObserver<[Forecast]>(viewModel.forecasts)
 
         forecastsObserver.closure = { [weak self ] _ in
             self?.tableView.reloadData()
@@ -65,17 +70,21 @@ class ForecastListViewController: UIViewController {
         }
     }
 
+    func removeBinding() {
+        self.forecastsObserver = nil
+        self.coordinateObserver = nil
+    }
 }
 
 extension ForecastListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.forecastsObserver?.value?.count ?? 0
+        return self.viewModel.forecastCount() ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ForecastTableViewCell.dequeueCell(from: tableView, for: indexPath)
 
-        if let forecast = self.viewModel.forecast(for: indexPath.row) {
+        if let forecast = self.viewModel.forecastModel(at: indexPath) {
             cell.configure(with: forecast)
         }
 

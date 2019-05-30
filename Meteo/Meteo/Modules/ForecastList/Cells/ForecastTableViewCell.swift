@@ -17,16 +17,26 @@ class ForecastTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+
+        self.dateLabel.text = nil
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func prepareForReuse() {
+        super.prepareForReuse()
 
-        // Configure the view for the selected state
+        self.dateLabel.text = nil
     }
 
     func configure(with forecast: ForecastDTO) {
         self.dateLabel.text = "\(forecast.date)"
+    }
+
+    func configure(with forecast: Forecast) {
+        guard let date = forecast.a_date else {
+            return
+        }
+
+        self.dateLabel.text = "\(date)"
     }
     
 }
