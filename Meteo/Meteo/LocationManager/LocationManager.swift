@@ -1,0 +1,61 @@
+//
+//  LocationManager.swift
+//  Meteo
+//
+//  Created by Kévin Mondésir on 30/05/2019.
+//  Copyright © 2019 Kévin Mondésir. All rights reserved.
+//
+
+import Foundation
+import CoreLocation
+
+class LocationManager: NSObject {
+    enum AuthorizationStatus {
+        case authorized
+        case unauthorized
+    }
+
+    private let locationManager = CLLocationManager()
+    var delegate: LocationManagerDelegate?
+
+    var location: CLLocation? {
+        return locationManager.location
+    }
+
+    override init() {
+        super.init()
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+
+    func getAuthorizationStatus() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways, .authorizedWhenInUse:
+            self.delegate?.authorization(status: .authorized)
+        default:
+            self.delegate?.authorization(status: .unauthorized)
+        }
+    }
+
+
+
+    func requestAutorization() {
+        self.locationManager.requestWhenInUseAuthorization()
+    }
+}
+
+extension LocationManager: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            self.delegate?.authorizationDidChange(status: .authorized)
+        default:
+            self.delegate?.authorizationDidChange(status: .unauthorized)
+        }
+    }
+}
+
+protocol LocationManagerDelegate {
+    func authorizationDidChange(status: LocationManager.AuthorizationStatus)
+    func authorization(status: LocationManager.AuthorizationStatus)
+}
