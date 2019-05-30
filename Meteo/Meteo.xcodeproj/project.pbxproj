@@ -59,6 +59,14 @@
 		2767E75422A026080065F2B5 /* StoryboardControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E75322A026080065F2B5 /* StoryboardControllerProtocol.swift */; };
 		2767E75622A026330065F2B5 /* ForecastList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2767E75522A026330065F2B5 /* ForecastList.storyboard */; };
 		2767E75A22A026670065F2B5 /* ForecastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E75922A026670065F2B5 /* ForecastListViewController.swift */; };
+		2767E75E22A02CDE0065F2B5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2767E75C22A02CDE0065F2B5 /* Model.xcdatamodeld */; };
+		2767E77222A0427B0065F2B5 /* Location+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E77122A0427B0065F2B5 /* Location+Extension.swift */; };
+		2767E77522A044060065F2B5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E77422A044060065F2B5 /* CoreDataManager.swift */; };
+		2767E77A22A0494E0065F2B5 /* Forecast+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E77622A0494E0065F2B5 /* Forecast+CoreDataClass.swift */; };
+		2767E77B22A0494E0065F2B5 /* Forecast+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E77722A0494E0065F2B5 /* Forecast+CoreDataProperties.swift */; };
+		2767E77C22A0494E0065F2B5 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E77822A0494E0065F2B5 /* Location+CoreDataClass.swift */; };
+		2767E77D22A0494E0065F2B5 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E77922A0494E0065F2B5 /* Location+CoreDataProperties.swift */; };
+		2767E77F22A04BA20065F2B5 /* Forecast+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E77E22A04BA20065F2B5 /* Forecast+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +122,14 @@
 		2767E75322A026080065F2B5 /* StoryboardControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardControllerProtocol.swift; sourceTree = "<group>"; };
 		2767E75522A026330065F2B5 /* ForecastList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForecastList.storyboard; sourceTree = "<group>"; };
 		2767E75922A026670065F2B5 /* ForecastListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListViewController.swift; sourceTree = "<group>"; };
+		2767E75D22A02CDE0065F2B5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		2767E77122A0427B0065F2B5 /* Location+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Extension.swift"; sourceTree = "<group>"; };
+		2767E77422A044060065F2B5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		2767E77622A0494E0065F2B5 /* Forecast+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Forecast+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2767E77722A0494E0065F2B5 /* Forecast+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Forecast+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2767E77822A0494E0065F2B5 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2767E77922A0494E0065F2B5 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2767E77E22A04BA20065F2B5 /* Forecast+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Forecast+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +171,8 @@
 		2767E6B1229FC9110065F2B5 /* Meteo */ = {
 			isa = PBXGroup;
 			children = (
+				2767E77322A043F40065F2B5 /* CoreDataManager */,
+				2767E75B22A02CC20065F2B5 /* Model */,
 				2767E73F22A017C50065F2B5 /* Modules */,
 				2767E72F22A00BA90065F2B5 /* Network */,
 				2767E728229FEE680065F2B5 /* LocationManager */,
@@ -342,6 +360,44 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		2767E75B22A02CC20065F2B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2767E77022A0425E0065F2B5 /* Extension */,
+				2767E75F22A033000065F2B5 /* Generated */,
+				2767E75C22A02CDE0065F2B5 /* Model.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2767E75F22A033000065F2B5 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				2767E77622A0494E0065F2B5 /* Forecast+CoreDataClass.swift */,
+				2767E77722A0494E0065F2B5 /* Forecast+CoreDataProperties.swift */,
+				2767E77822A0494E0065F2B5 /* Location+CoreDataClass.swift */,
+				2767E77922A0494E0065F2B5 /* Location+CoreDataProperties.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		2767E77022A0425E0065F2B5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2767E77122A0427B0065F2B5 /* Location+Extension.swift */,
+				2767E77E22A04BA20065F2B5 /* Forecast+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2767E77322A043F40065F2B5 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				2767E77422A044060065F2B5 /* CoreDataManager.swift */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -468,20 +524,28 @@
 				2767E702229FD8220065F2B5 /* DateFormatter+Extensions.swift in Sources */,
 				2767E74E22A01E410065F2B5 /* KVObserver.swift in Sources */,
 				2767E6F9229FD61F0065F2B5 /* ForecastDTO.swift in Sources */,
+				2767E75E22A02CDE0065F2B5 /* Model.xcdatamodeld in Sources */,
+				2767E77522A044060065F2B5 /* CoreDataManager.swift in Sources */,
+				2767E77F22A04BA20065F2B5 /* Forecast+Extension.swift in Sources */,
 				2767E74A22A019CA0065F2B5 /* ForecastListViewModel.swift in Sources */,
+				2767E77B22A0494E0065F2B5 /* Forecast+CoreDataProperties.swift in Sources */,
 				2767E72E229FF15C0065F2B5 /* CLPlacemark+Extensions.swift in Sources */,
+				2767E77D22A0494E0065F2B5 /* Location+CoreDataProperties.swift in Sources */,
 				2767E75422A026080065F2B5 /* StoryboardControllerProtocol.swift in Sources */,
 				2767E70B229FE0FE0065F2B5 /* TemperatureDTO.swift in Sources */,
 				2767E73922A00F760065F2B5 /* MeteoEndPoint.swift in Sources */,
 				2767E705229FD9F70065F2B5 /* CloudinessDTO.swift in Sources */,
 				2767E72A229FEE7C0065F2B5 /* LocationManager.swift in Sources */,
+				2767E77222A0427B0065F2B5 /* Location+Extension.swift in Sources */,
 				2767E720229FE48A0065F2B5 /* WindSpeedDTO.swift in Sources */,
 				2767E73622A00D3A0065F2B5 /* DecodableRequestProtocol.swift in Sources */,
 				2767E74322A018500065F2B5 /* TableViewCellProtocol.swift in Sources */,
 				2767E74722A018A80065F2B5 /* ForecastTableViewCell.swift in Sources */,
+				2767E77C22A0494E0065F2B5 /* Location+CoreDataClass.swift in Sources */,
 				2767E6B3229FC9110065F2B5 /* AppDelegate.swift in Sources */,
 				2767E6FD229FD6B20065F2B5 /* DecodingError.swift in Sources */,
 				2767E73B22A010100065F2B5 /* MeteoConstants.swift in Sources */,
+				2767E77A22A0494E0065F2B5 /* Forecast+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,6 +819,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2767E75C22A02CDE0065F2B5 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2767E75D22A02CDE0065F2B5 /* Model.xcdatamodel */,
+			);
+			currentVersion = 2767E75D22A02CDE0065F2B5 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2767E6A7229FC9110065F2B5 /* Project object */;
 }
