@@ -17,6 +17,32 @@
 		2767E6ED229FD2CD0065F2B5 /* MeteoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E6EC229FD2CD0065F2B5 /* MeteoTests.swift */; };
 		2767E6F6229FD30F0065F2B5 /* infoClimat.json in Resources */ = {isa = PBXBuildFile; fileRef = 2767E6F5229FD30F0065F2B5 /* infoClimat.json */; };
 		2767E6F7229FD3D40065F2B5 /* MeteoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E6CF229FD04C0065F2B5 /* MeteoDTO.swift */; };
+		2767E6F9229FD61F0065F2B5 /* ForecastDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E6F8229FD61F0065F2B5 /* ForecastDTO.swift */; };
+		2767E6FA229FD6220065F2B5 /* ForecastDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E6F8229FD61F0065F2B5 /* ForecastDTO.swift */; };
+		2767E6FD229FD6B20065F2B5 /* DecodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E6FC229FD6B20065F2B5 /* DecodingError.swift */; };
+		2767E6FE229FD7E80065F2B5 /* DecodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E6FC229FD6B20065F2B5 /* DecodingError.swift */; };
+		2767E702229FD8220065F2B5 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E701229FD8220065F2B5 /* DateFormatter+Extensions.swift */; };
+		2767E703229FD8220065F2B5 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E701229FD8220065F2B5 /* DateFormatter+Extensions.swift */; };
+		2767E705229FD9F70065F2B5 /* CloudinessDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E704229FD9F70065F2B5 /* CloudinessDTO.swift */; };
+		2767E706229FD9F70065F2B5 /* CloudinessDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E704229FD9F70065F2B5 /* CloudinessDTO.swift */; };
+		2767E708229FE0AC0065F2B5 /* nebulosite.json in Resources */ = {isa = PBXBuildFile; fileRef = 2767E707229FE0AC0065F2B5 /* nebulosite.json */; };
+		2767E709229FE0AC0065F2B5 /* nebulosite.json in Resources */ = {isa = PBXBuildFile; fileRef = 2767E707229FE0AC0065F2B5 /* nebulosite.json */; };
+		2767E70B229FE0FE0065F2B5 /* TemperatureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E70A229FE0FE0065F2B5 /* TemperatureDTO.swift */; };
+		2767E70C229FE0FE0065F2B5 /* TemperatureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E70A229FE0FE0065F2B5 /* TemperatureDTO.swift */; };
+		2767E70E229FE12B0065F2B5 /* temperature.json in Resources */ = {isa = PBXBuildFile; fileRef = 2767E70D229FE12B0065F2B5 /* temperature.json */; };
+		2767E70F229FE12B0065F2B5 /* temperature.json in Resources */ = {isa = PBXBuildFile; fileRef = 2767E70D229FE12B0065F2B5 /* temperature.json */; };
+		2767E714229FE27E0065F2B5 /* humidite.json in Resources */ = {isa = PBXBuildFile; fileRef = 2767E713229FE27E0065F2B5 /* humidite.json */; };
+		2767E715229FE27E0065F2B5 /* humidite.json in Resources */ = {isa = PBXBuildFile; fileRef = 2767E713229FE27E0065F2B5 /* humidite.json */; };
+		2767E71A229FE2ED0065F2B5 /* ventDirection.json in Resources */ = {isa = PBXBuildFile; fileRef = 2767E719229FE2ED0065F2B5 /* ventDirection.json */; };
+		2767E71B229FE2ED0065F2B5 /* ventDirection.json in Resources */ = {isa = PBXBuildFile; fileRef = 2767E719229FE2ED0065F2B5 /* ventDirection.json */; };
+		2767E71D229FE31C0065F2B5 /* ventMoyen.json in Resources */ = {isa = PBXBuildFile; fileRef = 2767E71C229FE31C0065F2B5 /* ventMoyen.json */; };
+		2767E71E229FE31C0065F2B5 /* ventMoyen.json in Resources */ = {isa = PBXBuildFile; fileRef = 2767E71C229FE31C0065F2B5 /* ventMoyen.json */; };
+		2767E720229FE48A0065F2B5 /* WindSpeedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E71F229FE48A0065F2B5 /* WindSpeedDTO.swift */; };
+		2767E721229FE48A0065F2B5 /* WindSpeedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E71F229FE48A0065F2B5 /* WindSpeedDTO.swift */; };
+		2767E723229FE49B0065F2B5 /* WindDirectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E722229FE49B0065F2B5 /* WindDirectionDTO.swift */; };
+		2767E724229FE49B0065F2B5 /* WindDirectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E722229FE49B0065F2B5 /* WindDirectionDTO.swift */; };
+		2767E726229FE4D30065F2B5 /* HumidityDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E725229FE4D30065F2B5 /* HumidityDTO.swift */; };
+		2767E727229FE4D30065F2B5 /* HumidityDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E725229FE4D30065F2B5 /* HumidityDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +69,19 @@
 		2767E6EC229FD2CD0065F2B5 /* MeteoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoTests.swift; sourceTree = "<group>"; };
 		2767E6EE229FD2CD0065F2B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2767E6F5229FD30F0065F2B5 /* infoClimat.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = infoClimat.json; sourceTree = "<group>"; };
+		2767E6F8229FD61F0065F2B5 /* ForecastDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDTO.swift; sourceTree = "<group>"; };
+		2767E6FC229FD6B20065F2B5 /* DecodingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingError.swift; sourceTree = "<group>"; };
+		2767E701229FD8220065F2B5 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		2767E704229FD9F70065F2B5 /* CloudinessDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudinessDTO.swift; sourceTree = "<group>"; };
+		2767E707229FE0AC0065F2B5 /* nebulosite.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = nebulosite.json; sourceTree = "<group>"; };
+		2767E70A229FE0FE0065F2B5 /* TemperatureDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureDTO.swift; sourceTree = "<group>"; };
+		2767E70D229FE12B0065F2B5 /* temperature.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = temperature.json; sourceTree = "<group>"; };
+		2767E713229FE27E0065F2B5 /* humidite.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = humidite.json; sourceTree = "<group>"; };
+		2767E719229FE2ED0065F2B5 /* ventDirection.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ventDirection.json; sourceTree = "<group>"; };
+		2767E71C229FE31C0065F2B5 /* ventMoyen.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ventMoyen.json; sourceTree = "<group>"; };
+		2767E71F229FE48A0065F2B5 /* WindSpeedDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindSpeedDTO.swift; sourceTree = "<group>"; };
+		2767E722229FE49B0065F2B5 /* WindDirectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindDirectionDTO.swift; sourceTree = "<group>"; };
+		2767E725229FE4D30065F2B5 /* HumidityDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +123,7 @@
 		2767E6B1229FC9110065F2B5 /* Meteo */ = {
 			isa = PBXGroup;
 			children = (
+				2767E6FF229FD8020065F2B5 /* Utils */,
 				2767E6CE229FD0170065F2B5 /* DataTransfertObject */,
 				2767E6CA229FCA650065F2B5 /* Ressources */,
 				2767E6B2229FC9110065F2B5 /* AppDelegate.swift */,
@@ -107,7 +147,14 @@
 		2767E6CE229FD0170065F2B5 /* DataTransfertObject */ = {
 			isa = PBXGroup;
 			children = (
+				2767E6FB229FD68E0065F2B5 /* DecodingError */,
 				2767E6CF229FD04C0065F2B5 /* MeteoDTO.swift */,
+				2767E6F8229FD61F0065F2B5 /* ForecastDTO.swift */,
+				2767E704229FD9F70065F2B5 /* CloudinessDTO.swift */,
+				2767E70A229FE0FE0065F2B5 /* TemperatureDTO.swift */,
+				2767E71F229FE48A0065F2B5 /* WindSpeedDTO.swift */,
+				2767E722229FE49B0065F2B5 /* WindDirectionDTO.swift */,
+				2767E725229FE4D30065F2B5 /* HumidityDTO.swift */,
 			);
 			path = DataTransfertObject;
 			sourceTree = "<group>";
@@ -126,8 +173,37 @@
 			isa = PBXGroup;
 			children = (
 				2767E6F5229FD30F0065F2B5 /* infoClimat.json */,
+				2767E707229FE0AC0065F2B5 /* nebulosite.json */,
+				2767E70D229FE12B0065F2B5 /* temperature.json */,
+				2767E713229FE27E0065F2B5 /* humidite.json */,
+				2767E719229FE2ED0065F2B5 /* ventDirection.json */,
+				2767E71C229FE31C0065F2B5 /* ventMoyen.json */,
 			);
 			path = Ressources;
+			sourceTree = "<group>";
+		};
+		2767E6FB229FD68E0065F2B5 /* DecodingError */ = {
+			isa = PBXGroup;
+			children = (
+				2767E6FC229FD6B20065F2B5 /* DecodingError.swift */,
+			);
+			path = DecodingError;
+			sourceTree = "<group>";
+		};
+		2767E6FF229FD8020065F2B5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2767E700229FD8090065F2B5 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2767E700229FD8090065F2B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2767E701229FD8220065F2B5 /* DateFormatter+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,10 +287,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2767E708229FE0AC0065F2B5 /* nebulosite.json in Resources */,
 				2767E6BD229FC9130065F2B5 /* LaunchScreen.storyboard in Resources */,
+				2767E71D229FE31C0065F2B5 /* ventMoyen.json in Resources */,
+				2767E70E229FE12B0065F2B5 /* temperature.json in Resources */,
 				2767E6CC229FCACA0065F2B5 /* Localizable.strings in Resources */,
 				2767E6BA229FC9130065F2B5 /* Assets.xcassets in Resources */,
+				2767E714229FE27E0065F2B5 /* humidite.json in Resources */,
 				2767E6B8229FC9110065F2B5 /* Main.storyboard in Resources */,
+				2767E71A229FE2ED0065F2B5 /* ventDirection.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +303,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2767E71E229FE31C0065F2B5 /* ventMoyen.json in Resources */,
+				2767E715229FE27E0065F2B5 /* humidite.json in Resources */,
+				2767E71B229FE2ED0065F2B5 /* ventDirection.json in Resources */,
 				2767E6F6229FD30F0065F2B5 /* infoClimat.json in Resources */,
+				2767E709229FE0AC0065F2B5 /* nebulosite.json in Resources */,
+				2767E70F229FE12B0065F2B5 /* temperature.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,9 +319,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2767E726229FE4D30065F2B5 /* HumidityDTO.swift in Sources */,
 				2767E6B5229FC9110065F2B5 /* ViewController.swift in Sources */,
+				2767E723229FE49B0065F2B5 /* WindDirectionDTO.swift in Sources */,
 				2767E6D0229FD04C0065F2B5 /* MeteoDTO.swift in Sources */,
+				2767E702229FD8220065F2B5 /* DateFormatter+Extensions.swift in Sources */,
+				2767E6F9229FD61F0065F2B5 /* ForecastDTO.swift in Sources */,
+				2767E70B229FE0FE0065F2B5 /* TemperatureDTO.swift in Sources */,
+				2767E705229FD9F70065F2B5 /* CloudinessDTO.swift in Sources */,
+				2767E720229FE48A0065F2B5 /* WindSpeedDTO.swift in Sources */,
 				2767E6B3229FC9110065F2B5 /* AppDelegate.swift in Sources */,
+				2767E6FD229FD6B20065F2B5 /* DecodingError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,8 +337,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2767E6FA229FD6220065F2B5 /* ForecastDTO.swift in Sources */,
+				2767E6FE229FD7E80065F2B5 /* DecodingError.swift in Sources */,
+				2767E727229FE4D30065F2B5 /* HumidityDTO.swift in Sources */,
 				2767E6F7229FD3D40065F2B5 /* MeteoDTO.swift in Sources */,
+				2767E70C229FE0FE0065F2B5 /* TemperatureDTO.swift in Sources */,
 				2767E6ED229FD2CD0065F2B5 /* MeteoTests.swift in Sources */,
+				2767E706229FD9F70065F2B5 /* CloudinessDTO.swift in Sources */,
+				2767E703229FD8220065F2B5 /* DateFormatter+Extensions.swift in Sources */,
+				2767E721229FE48A0065F2B5 /* WindSpeedDTO.swift in Sources */,
+				2767E724229FE49B0065F2B5 /* WindDirectionDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
