@@ -45,6 +45,11 @@
 		2767E727229FE4D30065F2B5 /* HumidityDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E725229FE4D30065F2B5 /* HumidityDTO.swift */; };
 		2767E72A229FEE7C0065F2B5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E729229FEE7C0065F2B5 /* LocationManager.swift */; };
 		2767E72E229FF15C0065F2B5 /* CLPlacemark+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E72D229FF15C0065F2B5 /* CLPlacemark+Extensions.swift */; };
+		2767E73422A00C0E0065F2B5 /* EndPointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E73322A00C0E0065F2B5 /* EndPointProtocol.swift */; };
+		2767E73622A00D3A0065F2B5 /* DecodableRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E73522A00D3A0065F2B5 /* DecodableRequestProtocol.swift */; };
+		2767E73922A00F760065F2B5 /* MeteoEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E73822A00F760065F2B5 /* MeteoEndPoint.swift */; };
+		2767E73B22A010100065F2B5 /* MeteoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E73A22A010100065F2B5 /* MeteoConstants.swift */; };
+		2767E73E22A0111E0065F2B5 /* GetMeteo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767E73D22A0111E0065F2B5 /* GetMeteo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +91,11 @@
 		2767E725229FE4D30065F2B5 /* HumidityDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityDTO.swift; sourceTree = "<group>"; };
 		2767E729229FEE7C0065F2B5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2767E72D229FF15C0065F2B5 /* CLPlacemark+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLPlacemark+Extensions.swift"; sourceTree = "<group>"; };
+		2767E73322A00C0E0065F2B5 /* EndPointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointProtocol.swift; sourceTree = "<group>"; };
+		2767E73522A00D3A0065F2B5 /* DecodableRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableRequestProtocol.swift; sourceTree = "<group>"; };
+		2767E73822A00F760065F2B5 /* MeteoEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoEndPoint.swift; sourceTree = "<group>"; };
+		2767E73A22A010100065F2B5 /* MeteoConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoConstants.swift; sourceTree = "<group>"; };
+		2767E73D22A0111E0065F2B5 /* GetMeteo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMeteo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +137,7 @@
 		2767E6B1229FC9110065F2B5 /* Meteo */ = {
 			isa = PBXGroup;
 			children = (
+				2767E72F22A00BA90065F2B5 /* Network */,
 				2767E728229FEE680065F2B5 /* LocationManager */,
 				2767E6FF229FD8020065F2B5 /* Utils */,
 				2767E6CE229FD0170065F2B5 /* DataTransfertObject */,
@@ -218,6 +229,42 @@
 				2767E729229FEE7C0065F2B5 /* LocationManager.swift */,
 			);
 			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		2767E72F22A00BA90065F2B5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2767E73722A00F590065F2B5 /* Meteo */,
+				2767E73022A00BD10065F2B5 /* Protocols */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2767E73022A00BD10065F2B5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2767E73322A00C0E0065F2B5 /* EndPointProtocol.swift */,
+				2767E73522A00D3A0065F2B5 /* DecodableRequestProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2767E73722A00F590065F2B5 /* Meteo */ = {
+			isa = PBXGroup;
+			children = (
+				2767E73C22A011110065F2B5 /* Requests */,
+				2767E73822A00F760065F2B5 /* MeteoEndPoint.swift */,
+				2767E73A22A010100065F2B5 /* MeteoConstants.swift */,
+			);
+			path = Meteo;
+			sourceTree = "<group>";
+		};
+		2767E73C22A011110065F2B5 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				2767E73D22A0111E0065F2B5 /* GetMeteo.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,18 +381,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				2767E726229FE4D30065F2B5 /* HumidityDTO.swift in Sources */,
+				2767E73422A00C0E0065F2B5 /* EndPointProtocol.swift in Sources */,
 				2767E6B5229FC9110065F2B5 /* ViewController.swift in Sources */,
+				2767E73E22A0111E0065F2B5 /* GetMeteo.swift in Sources */,
 				2767E723229FE49B0065F2B5 /* WindDirectionDTO.swift in Sources */,
 				2767E6D0229FD04C0065F2B5 /* MeteoDTO.swift in Sources */,
 				2767E702229FD8220065F2B5 /* DateFormatter+Extensions.swift in Sources */,
 				2767E6F9229FD61F0065F2B5 /* ForecastDTO.swift in Sources */,
 				2767E72E229FF15C0065F2B5 /* CLPlacemark+Extensions.swift in Sources */,
 				2767E70B229FE0FE0065F2B5 /* TemperatureDTO.swift in Sources */,
+				2767E73922A00F760065F2B5 /* MeteoEndPoint.swift in Sources */,
 				2767E705229FD9F70065F2B5 /* CloudinessDTO.swift in Sources */,
 				2767E72A229FEE7C0065F2B5 /* LocationManager.swift in Sources */,
 				2767E720229FE48A0065F2B5 /* WindSpeedDTO.swift in Sources */,
+				2767E73622A00D3A0065F2B5 /* DecodableRequestProtocol.swift in Sources */,
 				2767E6B3229FC9110065F2B5 /* AppDelegate.swift in Sources */,
 				2767E6FD229FD6B20065F2B5 /* DecodingError.swift in Sources */,
+				2767E73B22A010100065F2B5 /* MeteoConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
