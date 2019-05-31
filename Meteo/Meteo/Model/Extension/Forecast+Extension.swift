@@ -18,4 +18,24 @@ extension Forecast {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "a_date", ascending: true)]
         return fetchRequest
     }
+
+    var windSpeed: Measurement<Unit> {
+        return Measurement(value: self.a_windSpeed, unit: UnitSpeed.kilometersPerHour)
+    }
+
+    var windDirection: Measurement<Unit> {
+        return Measurement(value: self.a_windDirection, unit: Unit(symbol: "°"))
+    }
+
+    var humidity: Measurement<Unit> {
+        return Measurement(value: self.a_humidity, unit: Unit(symbol: "%"))
+    }
+
+    var temperature: Measurement<Unit> {
+        return Measurement(value: self.a_humidity, unit: Unit(symbol: "Kelvin"))
+    }
+
+    var cloudiness: Measurement<Unit> {
+        return Measurement(value: self.a_humidity, unit: Unit(symbol: "%"))
+    }
 }

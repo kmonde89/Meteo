@@ -28,15 +28,16 @@ class ForecastTableViewCell: UITableViewCell {
     }
 
     func configure(with forecast: ForecastDTO) {
-        self.dateLabel.text = "\(forecast.date)"
+        self.dateLabel.text = "\(forecast.date.displayString)"
     }
 
     func configure(with forecast: Forecast) {
-        guard let date = forecast.a_date else {
+        guard let date = forecast.a_date as Date? else {
             return
         }
 
-        self.dateLabel.text = "\(date)"
+        self.dateLabel.text = "\(date.displayString)"
+        self.accessoryType = .disclosureIndicator
     }
     
 }

@@ -43,6 +43,17 @@ class LocationManager: NSObject {
     func requestAutorization() {
         self.locationManager.requestWhenInUseAuthorization()
     }
+
+    func getPlace(for location: CLLocation, completion: @escaping (Result<CLPlacemark?, Error>) -> Void) {
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(placemarks?.first))
+            }
+        }
+    }
 }
 
 extension LocationManager: CLLocationManagerDelegate {

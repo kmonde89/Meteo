@@ -50,7 +50,8 @@ class ForecastListViewModel: NSObject {
     // MARK: - Observable
 
     var forecasts = KVObservable<[Forecast]>([])
-    var coordinate = KVObservable<CLLocationCoordinate2D?>(nil)
+    var location = KVObservable<CLLocation?>(nil)
+    var locality = KVObservable<String?>(nil)
 
     override init() {
         super.init()
@@ -60,6 +61,7 @@ class ForecastListViewModel: NSObject {
         self.performFetch()
     }
 
+    // MARK: - Actions
 
     func performFetch() {
         do {
@@ -70,22 +72,38 @@ class ForecastListViewModel: NSObject {
         }
     }
 
-    func updateGetMeteoLocation() {
-        guard let coordinate = self.coordinate.value else {
+    func suspendRunningRequest() {
+        guard let dataTask = self.getMeteo?.dataTask, dataTask.state == .running else {
             return
         }
 
-        self.getMeteo = GetMeteo(location: "\(coordinate.latitude),\(coordinate.longitude)")
+        dataTask.suspend()
+    }
+
+    func updateGetMeteoLocation() {
+        guard let location = self.location.value else {
+            return
+        }
+
+        self.getMeteo = GetMeteo(location: "\(location.coordinate.latitude),\(location.coordinate.longitude)")
+        self.locationManager?.getPlace(for: location, completion: { [weak self]result in
+            switch result {
+            case .success(let placemark):
+                self?.locality.value = placemark?.locality
+            case .failure(let error):
+                self?.errorClosure?(error)
+            }
+        })
     }
 
     func reloadInformations() {
         self.getMeteo?.performRequest { [weak self](result) in
             switch result {
             case .success(let meteoDTO):
-                guard let coordinate = self?.coordinate.value else {
+                guard let location = self?.location.value else {
                     return
                 }
-                CoreDataManager.current.save(meteoDTO, coordinate: coordinate, isCurrentLocation: true, { result in
+                CoreDataManager.current.save(meteoDTO, coordinate: location.coordinate, isCurrentLocation: true, { result in
                     DispatchQueue.main.async { [weak self] in
                         switch result {
                         case .failure(let error):
@@ -114,7 +132,7 @@ extension ForecastListViewModel: LocationManagerDelegate {
     func authorizationDidChange(status: LocationManager.AuthorizationStatus) {
         switch status {
         case .authorized:
-            self.coordinate.value = self.locationManager?.location?.coordinate
+            self.location.value = self.locationManager?.location
         case .unauthorized:
             self.locationManager?.requestAutorization()
         case .undetermined: return
@@ -124,7 +142,7 @@ extension ForecastListViewModel: LocationManagerDelegate {
     func authorization(status: LocationManager.AuthorizationStatus) {
         switch status {
         case .authorized:
-            self.coordinate.value = self.locationManager?.location?.coordinate
+            self.location.value = self.locationManager?.location
         case .unauthorized, .undetermined:
             self.locationManager?.requestAutorization()
         }

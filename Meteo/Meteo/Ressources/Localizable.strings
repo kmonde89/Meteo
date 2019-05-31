@@ -5,3 +5,9 @@
   Created by Kévin Mondésir on 30/05/2019.
   Copyright © 2019 Kévin Mondésir. All rights reserved.
 */
+
+"temperature" = "temperature";
+"windSpeed" = "force du vent";
+"windDirection" = "direction du vent";
+"humidity" = "humidite";
+"cloudiness" = "nebulosite";
