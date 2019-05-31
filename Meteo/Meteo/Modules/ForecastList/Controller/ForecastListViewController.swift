@@ -84,7 +84,7 @@ class ForecastListViewController: UIViewController {
     }
 }
 
-extension ForecastListViewController: UITableViewDataSource {
+extension ForecastListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.forecastCount() ?? 0
     }
@@ -97,5 +97,15 @@ extension ForecastListViewController: UITableViewDataSource {
         }
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let forecast = self.viewModel.forecastModel(at: indexPath) else {
+            return
+        }
+
+        let forecastDetailViewController = ForecastDetailViewController.instantiate()
+        forecastDetailViewController.forecastDetailViewModel = ForecastDetailViewModel(with: forecast)
+        self.navigationController?.pushViewController(forecastDetailViewController, animated: true)
     }
 }
