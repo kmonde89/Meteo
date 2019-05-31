@@ -18,7 +18,8 @@ class ForecastListViewController: UIViewController {
     // MARK: - Properties
 
     var forecastsObserver: KVObserver<[Forecast]>?
-    var coordinateObserver: KVObserver<CLLocationCoordinate2D?>?
+    var locationObserver: KVObserver<CLLocation?>?
+    var localityObserver: KVObserver<String?>?
     let viewModel = ForecastListViewModel()
 
     // MARK: - LifeCycle
@@ -57,13 +58,20 @@ class ForecastListViewController: UIViewController {
         }
         self.forecastsObserver = forecastsObserver
 
-        let coordinateObserver = KVObserver<CLLocationCoordinate2D?>(viewModel.coordinate)
+        let locationObserver = KVObserver<CLLocation?>(viewModel.location)
 
-        coordinateObserver.closure = { [weak self ] _ in
+        locationObserver.closure = { [weak self ] _ in
             self?.viewModel.updateGetMeteoLocation()
             self?.viewModel.reloadInformations()
         }
-        self.coordinateObserver = coordinateObserver
+        self.locationObserver = locationObserver
+
+        let localityObserver = KVObserver<String?>(viewModel.locality)
+
+        localityObserver.closure = { [weak self ] locality in
+            self?.navigationItem.title = locality
+        }
+        self.localityObserver = localityObserver
 
         viewModel.errorClosure = { [weak self] error in
             self?.show(error: error)
@@ -72,7 +80,7 @@ class ForecastListViewController: UIViewController {
 
     func removeBinding() {
         self.forecastsObserver = nil
-        self.coordinateObserver = nil
+        self.locationObserver = nil
     }
 }
 
