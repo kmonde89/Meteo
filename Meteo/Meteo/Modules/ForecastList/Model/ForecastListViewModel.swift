@@ -129,6 +129,10 @@ class ForecastListViewModel: NSObject {
 }
 
 extension ForecastListViewModel: LocationManagerDelegate {
+    func locationDidChange(location: CLLocation?) {
+        self.location.value = location
+    }
+
     func authorizationDidChange(status: LocationManager.AuthorizationStatus) {
         switch status {
         case .authorized:
